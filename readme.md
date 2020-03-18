@@ -10,13 +10,14 @@ This repo will largely consist of convenience scripts, the intention is to have 
 
 ## Contents
 
-* *json_to_csv.py* provides a QGIS-friendly format for plotting
+```traverse_flights.py``` finds all the flights in a WingtraPilotProjects folder and performs the following actions:
+* ```convert_geotags.py``` provides conversions to CSV and KML
 
 ## Usage
 
-As of the first commit the essential usage is:
+The essential usage is:
 
-```python -m json_to_csv.py path/to/geotags.json ```
+```python traverse_flights.py path/to/WingtraPilotProjects ```
 
 ## Contribution
 
