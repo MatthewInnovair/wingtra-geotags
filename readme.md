@@ -10,11 +10,9 @@ This repo will largely consist of convenience scripts, the intention is to have 
 
 ## Contents
 
-<<<<<<< HEAD
 ```traverse_flights.py``` finds all the flights in a WingtraPilotProjects folder and performs the following actions:
-* *json_to_csv.py* provides a QGIS-friendly format
-* *json_to_kml.py* provides a Google Earth friendly format
->>>>>>> 1dab287a7506acf299c3fc42d9d8805516c233d0
+* ```json_to_csv.py``` provides a QGIS-friendly format
+* ```json_to_kml.py``` provides a Google Earth friendly format
 
 ## Usage
 
