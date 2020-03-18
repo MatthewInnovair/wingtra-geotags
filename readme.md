@@ -10,7 +10,8 @@ This repo will largely consist of convenience scripts, the intention is to have 
 
 ## Contents
 
-* *json_to_csv.py* provides a QGIS-friendly format for plotting
+* *json_to_csv.py* provides a QGIS-friendly format
+* *json_to_kml.py* provides a Google Earth friendly format
 
 ## Usage
 
