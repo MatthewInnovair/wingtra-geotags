@@ -10,6 +10,7 @@
 import sys
 import os
 from glob import glob
+from convert_geotags import ConvertGeotags
 
 
 def check_input():
@@ -34,7 +35,8 @@ def get_path_to_geotags(path):
         # check guess at geotag path exists and perform actions
         if os.path.exists(geotag_path):
             print(geotag_path)
-            os.system("python json_to_csv.py " + geotag_path)    
+            cg = ConvertGeotags()
+            cg.run(geotag_path)    
 
 if __name__ == "__main__":
     path = check_input()
