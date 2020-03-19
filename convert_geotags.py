@@ -30,13 +30,21 @@ class ConvertGeotags:
         with open(self.input_path) as json_file:
             data = json.load(json_file)
 
-        data_out = []
+        data_out_string = []
+        data_out_float = []
 
         for flight in data['flights']:
             for geotag in flight['geotag']:
-                data_out.append(geotag['coordinate'])
+                data_out_string.append(geotag['coordinate'])
+
+        self.geotags_list_string = data_out_string
+
+        for row in data_out_string:
+            row_num = [float(x) for x in row]
+            row_num[0], row_num[1] = row_num[1], row_num[0]
+            data_out_float.append(row_num)
         
-        self.geotags_list = data_out
+        self.geotags_list = data_out_float
 
     def convert_to_kml(self):  
         output_filename = self.flight_name + ".kml"
@@ -51,11 +59,8 @@ class ConvertGeotags:
 
         i = 0
         for row in self.geotags_list:
-            row_num = [float(tag) for tag in row]
-            row_num[0], row_num[1] = row_num[1], row_num[0]
-
             p = kml.Placemark(ns,str(i))
-            p.geometry = Point(row_num)
+            p.geometry = Point(row)
             f.append(p)
             i += 1
 
